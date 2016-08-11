@@ -9,3 +9,10 @@ Features
 - Has a settings object to adjust performance or functionality
 - Can run slow loading callbacks (after 5 seconds callback)
 - jQuery like syntax
+
+#View a demo
+http://redditchweb.co.uk/dev/jAjax/jAjax.php
+
+#Download
+v0.8:
+http://redditchweb.co.uk/dev/jAjax/jAjax-prototype.min.js
