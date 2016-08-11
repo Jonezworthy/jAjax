@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script src="jAjax-prototype.js" async></script>
+        <!--<script src="jAjax.min.js" async></script>-->
+    </head>
+    <body>
+        <h2>Statuses:</h2>
+        <p id="readyAmount"></p>
+        <p id="activeAmount"></p>
+        <p id="completeAmount"></p>
+        <br />
+        <p id="maxConnections"></p>
+        <h2>Source/Download:</h2>
+        <p>In alpha, not fully tested</p>
+        <a target="_blank" href="jAjax-prototype.min.js">Download jAjax v0.8 Here (minified)</a>
+        <br />
+        <a target="_blank" href="jAjax-prototype.js">Download jAjax v0.8 Here (documented)</a>
+        
+        <h2>Information:</h2>
+        <h3>Open your net panel!</h3>
+        <h3><a target="_blank" href="jAjax-prototype.js">Click here to download the library, which is documented</a></h3>
+        
+        <h2>Have a go:</h2>
+        <p>Paste this in to your console to queue 10 uncached requests that take between 5-20 seconds (sleep with rand(5,20) in the PHP)</p>
+        <textarea style="width: 100%;height: 300px">for (var i = 0; i < 10; i++) {
+    jAjax({
+        url: "ajaxMe.php?timeStamp=" + Math.random() //url to ajax
+        , method: "get" //http method
+        , priority: (i || 1) //priority level (10: required, 1: do when you can
+        , cacheTime: false //cache time, in seconds
+        , number: i
+        , success: function (response, originalOptions, xmlHttpObject) { //callback
+            console.log(this.number);
+        }
+    });
+}</textarea>
+        <p>Paste this in to your console to increase your max connections to 5</p>
+        <p>There are other settings that can be applied, please see the source file </p>
+        <textarea style="width: 100%;height: 50px">jAjaxSettings.maxConnections = 5</textarea>
+    </body>
+</html>
